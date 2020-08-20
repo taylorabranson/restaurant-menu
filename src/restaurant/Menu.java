@@ -7,7 +7,7 @@ public class Menu {
 
     public String lastUpdated;
 
-    private ArrayList<MenuItem> menu = new ArrayList<>();
+    private ArrayList<MenuItem> menu;
 
     public Menu(ArrayList<MenuItem> menu) {
         this.menu = menu;
@@ -33,7 +33,7 @@ public class Menu {
         menuUpdated();
     }
 
-    private void removeMenuitem(MenuItem item) {
+    private void removeMenuItem(MenuItem item) {
         menu.remove(item);
         menuUpdated();
     }
