@@ -5,11 +5,11 @@ import java.util.Date;
 
 public class Menu {
 
-    public String lastUpdated;
+    private String lastUpdated;
 
     private ArrayList<MenuItem> menu;
 
-    public Menu(ArrayList<MenuItem> menu) {
+    private Menu(ArrayList<MenuItem> menu) {
         this.menu = menu;
     }
 
@@ -28,12 +28,12 @@ public class Menu {
         lastUpdated = aLastUpdated;
     }
 
-    private void addMenuItem(MenuItem item) {
+    public void addMenuItem(MenuItem item) {
         menu.add(item);
         menuUpdated();
     }
 
-    private void removeMenuItem(MenuItem item) {
+    public void removeMenuItem(MenuItem item) {
         menu.remove(item);
         menuUpdated();
     }

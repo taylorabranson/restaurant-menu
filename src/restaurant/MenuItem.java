@@ -14,7 +14,7 @@ public class MenuItem {
         this.dateAdded = dateAdded;
     }
 
-    public static boolean isNew() {
+    public boolean isNew() {
         // checks dateAdded against current date
         // returns true if added < 1 month ago
         // else return false
@@ -25,7 +25,7 @@ public class MenuItem {
         return price;
     }
 
-    protected void setPrice(double aPrice) {
+    public void setPrice(double aPrice) {
         price = aPrice;
     }
 
@@ -33,7 +33,7 @@ public class MenuItem {
         return description;
     }
 
-    protected void setDescription(String aDescription) {
+    public void setDescription(String aDescription) {
         description = aDescription;
     }
 
@@ -41,7 +41,7 @@ public class MenuItem {
         return category;
     }
 
-    protected void setCategory(String aCategory) {
+    public void setCategory(String aCategory) {
         category = aCategory;
     }
 
@@ -49,7 +49,7 @@ public class MenuItem {
         return dateAdded;
     }
 
-    protected void setDateAdded(int aDateAdded) {
+    public void setDateAdded(int aDateAdded) {
         dateAdded = aDateAdded;
     }
 }
