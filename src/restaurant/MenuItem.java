@@ -25,7 +25,7 @@ public class MenuItem {
         // else return false
         currentTime = new Date();
         double millisecondsInOneMonth = 2629746000.0;
-        if (getCurrentTime() - millisecondsInOneMonth >= getDateAdded()) {
+        if (getCurrentTime() - millisecondsInOneMonth >= getDateAdded().getTime()) {
             return true;
         } else {
             return false;
@@ -68,8 +68,8 @@ public class MenuItem {
         this.category = aCategory;
     }
 
-    public long getDateAdded() {
-        return this.dateAdded.getTime();
+    public Date getDateAdded() {
+        return this.dateAdded;
     }
 
     public void setDateAdded(Date aDateAdded) {
