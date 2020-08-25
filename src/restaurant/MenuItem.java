@@ -9,13 +9,14 @@ public class MenuItem {
     private String description;
     private String category;
     private Date dateAdded;
-    private Date currentTime = new Date();
+    private Date currentTime;
 
     public MenuItem(String name, double price, String description, String category) {
         this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
+        this.currentTime = new Date ();
         this.dateAdded = this.currentTime;
     }
 
