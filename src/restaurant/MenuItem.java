@@ -1,55 +1,82 @@
 package restaurant;
 
+import java.util.Date;
+
 public class MenuItem {
 
+    private String name;
     private double price;
     private String description;
     private String category;
-    private int dateAdded;
+    private Date dateAdded;
+    private Date currentTime = new Date();
 
-    public MenuItem(double price, String description, String category, int dateAdded) {
+    public MenuItem(String name, double price, String description, String category) {
+        this.name = name;
         this.price = price;
         this.description = description;
         this.category = category;
-        this.dateAdded = dateAdded;
+        this.dateAdded = this.currentTime;
     }
 
     public boolean isNew() {
         // checks dateAdded against current date
         // returns true if added < 1 month ago
         // else return false
-        return true;
+        currentTime = new Date();
+        double millisecondsInOneMonth = 2629746000.0;
+        if (getCurrentTime() - millisecondsInOneMonth >= getDateAdded()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    private long getCurrentTime() {
+       return currentTime.getTime();
+    }
+
+    public String getName() {
+        return this.name;
+    }
+
+    public void setName(String aName) {
+        this.name = aName;
     }
 
     public double getPrice() {
-        return price;
+        return this.price;
     }
 
     public void setPrice(double aPrice) {
-        price = aPrice;
+        this.price = aPrice;
     }
 
     public String getDescription() {
-        return description;
+        return this.description;
     }
 
     public void setDescription(String aDescription) {
-        description = aDescription;
+        this.description = aDescription;
     }
 
     public String getCategory() {
-        return category;
+        return this.category;
     }
 
     public void setCategory(String aCategory) {
-        category = aCategory;
+        this.category = aCategory;
     }
 
-    public int getDateAdded() {
-        return dateAdded;
+    public long getDateAdded() {
+        return this.dateAdded.getTime();
     }
 
-    public void setDateAdded(int aDateAdded) {
-        dateAdded = aDateAdded;
+    public void setDateAdded(Date aDateAdded) {
+        this.dateAdded = aDateAdded;
+    }
+
+    public String getDateAddedString() {
+       return this.dateAdded.toString();
     }
 }
