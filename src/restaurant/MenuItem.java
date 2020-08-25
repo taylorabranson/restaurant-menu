@@ -21,9 +21,7 @@ public class MenuItem {
     }
 
     public boolean isNew() {
-        // checks dateAdded against current date
         // returns true if added < 1 month ago
-        // else return false
         currentTime = new Date();
         double millisecondsInOneMonth = 2629746000.0;
         if (getCurrentTime().getTime() - millisecondsInOneMonth >= getDateAdded().getTime()) {
@@ -33,51 +31,61 @@ public class MenuItem {
         }
     }
 
-    private Date getCurrentTime() {
-       return currentTime;
+    public String dateAddedString() {
+        return this.dateAdded.toString();
     }
 
     public String getName() {
         return this.name;
     }
 
-    public void setName(String aName) {
-        this.name = aName;
-    }
-
     public double getPrice() {
         return this.price;
-    }
-
-    public void setPrice(double aPrice) {
-        this.price = aPrice;
     }
 
     public String getDescription() {
         return this.description;
     }
 
-    public void setDescription(String aDescription) {
-        this.description = aDescription;
-    }
-
     public String getCategory() {
         return this.category;
-    }
-
-    public void setCategory(String aCategory) {
-        this.category = aCategory;
     }
 
     public Date getDateAdded() {
         return this.dateAdded;
     }
 
+    private Date getCurrentTime() {
+       return currentTime;
+    }
+
+    public void setName(String aName) {
+        this.name = aName;
+    }
+
+    public void setPrice(double aPrice) {
+        this.price = aPrice;
+    }
+
+    public void setDescription(String aDescription) {
+        this.description = aDescription;
+    }
+
+    public void setCategory(String aCategory) {
+        this.category = aCategory;
+    }
+
     public void setDateAdded(Date aDateAdded) {
         this.dateAdded = aDateAdded;
     }
 
-    public String getDateAddedString() {
-       return this.dateAdded.toString();
+    public void printMenuItem() {
+        System.out.println(getName());
+        if (isNew()) {
+            System.out.println("New Item!");
+        }
+        System.out.println("$" + getPrice());
+        System.out.println(getDescription());
+        System.out.println(getCategory());
     }
 }
