@@ -22,7 +22,6 @@ public class Menu {
     private void menuUpdated() {
         // gets current date from java.util.date
         Date currentTime = new Date();
-        // calls setLastUpdated() with current date as argument
         setLastUpdated(currentTime);
     }
 
@@ -57,14 +56,7 @@ public class Menu {
         System.out.println("Last Updated: " + getLastUpdated().toString());
         for (MenuItem item : this.menu) {
             System.out.println("\n*******\n");
-            System.out.println(item.getName());
-            if (item.isNew()) {
-                System.out.println("New Item!");
-            }
-            System.out.println("$" + item.getPrice());
-            System.out.println(item.getDescription());
-            System.out.println(item.getCategory());
-            System.out.println("Added on: " + item.getDateAddedString());
+            item.printMenuItem();
         };
     }
 }
