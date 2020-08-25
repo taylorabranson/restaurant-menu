@@ -12,7 +12,7 @@ public class Menu {
     public Menu(String menuName, ArrayList<MenuItem> menu) {
         this.menuName = menuName;
         this.menu = menu;
-        menuUpdated();
+        this.lastUpdated = new Date();
     }
 
     public Menu(String menuName) {
