@@ -26,15 +26,15 @@ public class MenuItem {
         // else return false
         currentTime = new Date();
         double millisecondsInOneMonth = 2629746000.0;
-        if (getCurrentTime() - millisecondsInOneMonth >= getDateAdded().getTime()) {
+        if (getCurrentTime().getTime() - millisecondsInOneMonth >= getDateAdded().getTime()) {
             return true;
         } else {
             return false;
         }
     }
 
-    private long getCurrentTime() {
-       return currentTime.getTime();
+    private Date getCurrentTime() {
+       return currentTime;
     }
 
     public String getName() {
