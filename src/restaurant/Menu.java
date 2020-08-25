@@ -6,7 +6,7 @@ import java.util.Date;
 public class Menu {
 
     private String menuName;
-    private String lastUpdated;
+    private Date lastUpdated;
     private ArrayList<MenuItem> menu;
 
     public Menu(String menuName, ArrayList<MenuItem> menu) {
@@ -23,7 +23,7 @@ public class Menu {
         // gets current date from java.util.date
         Date currentTime = new Date();
         // calls setLastUpdated() with current date as argument
-        setLastUpdated(currentTime.toString());
+        setLastUpdated(currentTime);
     }
 
     public String getMenuName() {
@@ -34,11 +34,11 @@ public class Menu {
         this.menuName = aMenuName;
     }
 
-    public String getLastUpdated() {
+    public Date getLastUpdated() {
         return this.lastUpdated;
     }
 
-    private void setLastUpdated(String aLastUpdated) {
+    private void setLastUpdated(Date aLastUpdated) {
         this.lastUpdated = aLastUpdated;
     }
 
@@ -54,7 +54,7 @@ public class Menu {
 
     public void printMenu() {
         System.out.println(getMenuName());
-        System.out.println("Last Updated: " + getLastUpdated());
+        System.out.println("Last Updated: " + getLastUpdated().toString());
         for (MenuItem item : this.menu) {
             System.out.println("\n*******\n");
             System.out.println(item.getName());
