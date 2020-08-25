@@ -19,11 +19,7 @@ public class Menu {
         this(menuName, new ArrayList<>());
     }
 
-    private void menuUpdated() {
-        // gets current date from java.util.date
-        Date currentTime = new Date();
-        setLastUpdated(currentTime);
-    }
+    // getters/setters
 
     public String getMenuName() {
         return this.menuName;
@@ -37,8 +33,16 @@ public class Menu {
         return this.lastUpdated;
     }
 
-    private void setLastUpdated(Date aLastUpdated) {
+    public void setLastUpdated(Date aLastUpdated) {
         this.lastUpdated = aLastUpdated;
+    }
+
+    // other methods
+
+    private void menuUpdated() {
+        // gets current date from java.util.date
+        Date currentTime = new Date();
+        setLastUpdated(currentTime);
     }
 
     public void addMenuItem(MenuItem item) {

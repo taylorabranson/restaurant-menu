@@ -20,20 +20,7 @@ public class MenuItem {
         this.dateAdded = this.currentTime;
     }
 
-    public boolean isNew() {
-        // returns true if added < 1 month ago
-        currentTime = new Date();
-        double millisecondsInOneMonth = 2629746000.0;
-        if (getCurrentTime().getTime() - millisecondsInOneMonth >= getDateAdded().getTime()) {
-            return true;
-        } else {
-            return false;
-        }
-    }
-
-    public String dateAddedString() {
-        return this.dateAdded.toString();
-    }
+    // getters/setters
 
     public String getName() {
         return this.name;
@@ -79,6 +66,8 @@ public class MenuItem {
         this.dateAdded = aDateAdded;
     }
 
+    // other methods
+
     public void printMenuItem() {
         System.out.println(getName());
         if (isNew()) {
@@ -87,5 +76,20 @@ public class MenuItem {
         System.out.println("$" + getPrice());
         System.out.println(getDescription());
         System.out.println(getCategory());
+    }
+
+    public boolean isNew() {
+        // returns true if added < 1 month ago
+        currentTime = new Date();
+        double millisecondsInOneMonth = 2629746000.0;
+        if (getCurrentTime().getTime() - millisecondsInOneMonth >= getDateAdded().getTime()) {
+            return true;
+        } else {
+            return false;
+        }
+    }
+
+    public String dateAddedString() {
+        return this.dateAdded.toString();
     }
 }
