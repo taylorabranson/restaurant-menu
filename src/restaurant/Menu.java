@@ -57,7 +57,7 @@ public class Menu {
 
     public void printMenu() {
         System.out.println(getMenuName());
-        System.out.println("Last Updated: " + getLastUpdated().toString());
+        System.out.println("Menu Last Updated: \n" + getLastUpdated().toString());
         for (MenuItem item : this.menu) {
             System.out.println("\n*******\n");
             item.printMenuItem();
