@@ -91,8 +91,8 @@ public class Menu {
         this.addMenuItem(name, price, description, category);
     }
 
-    public void removeMenuItem(MenuItem item) {
-        menu.remove(item);
+    public void removeMenuItem(int index) {
+        menu.remove(index);
         menuUpdated();
     }
 }
