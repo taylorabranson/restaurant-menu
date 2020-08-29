@@ -55,6 +55,17 @@ public class Menu {
         };
     }
 
+    public int findMenuItemIndex(String name, double price, String category) {
+        MenuItem item;
+        for (int i = 0; i < menu.size(); i++) {
+            item = menu.get(i);
+            if (item.getName() == name && item.getPrice() == price && item.getCategory() == category) {
+                return i;
+            }
+        }
+        return -1;
+    }
+
     // add/remove MenuItem from menu
     public void addMenuItem(String name, double price, String description, String category) {
         int menuLength = menu.size();
