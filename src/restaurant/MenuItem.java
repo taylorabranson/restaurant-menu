@@ -89,7 +89,5 @@ public class MenuItem {
         }
     }
 
-    public String dateAddedString() {
-        return this.dateAdded.toString();
-    }
+
 }
