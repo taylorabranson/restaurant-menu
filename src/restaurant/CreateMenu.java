@@ -11,8 +11,11 @@ public class CreateMenu {
 
         dinnerMenu.printMenu();
 
-        dinnerMenu.addMenuItemFromUserInput();
+//        dinnerMenu.addMenuItemFromUserInput();
 
         dinnerMenu.printMenu();
+
+        System.out.println(dinnerMenu.findMenuItemIndex("Pizza", 9.99, "Entree"));
+        System.out.println(dinnerMenu.findMenuItemIndex("Shoe", 7.85, "non-food items"));
     }
 }
