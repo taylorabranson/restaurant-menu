@@ -45,16 +45,6 @@ public class Menu {
         setLastUpdated(currentTime);
     }
 
-    public void addMenuItem(MenuItem item) {
-        menu.add(item);
-        menuUpdated();
-    }
-
-    public void removeMenuItem(MenuItem item) {
-        menu.remove(item);
-        menuUpdated();
-    }
-
     public void printMenu() {
         System.out.println(getMenuName());
         System.out.println("Menu Last Updated: \n" + getLastUpdated().toString());
@@ -62,5 +52,20 @@ public class Menu {
             System.out.println("\n*******\n");
             item.printMenuItem();
         };
+    }
+
+    // add/remove MenuItem from menu
+    public void addMenuItem(String name, double price, String description, String category) {
+        int menuLength = menu.size();
+        MenuItem item = new MenuItem(name,price, description, category);
+        menu.add(item);
+        if (menuLength < menu.size()) {
+            menuUpdated();
+        }
+    }
+
+    public void removeMenuItem(MenuItem item) {
+        menu.remove(item);
+        menuUpdated();
     }
 }
