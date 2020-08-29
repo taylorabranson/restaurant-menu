@@ -2,6 +2,7 @@ package restaurant;
 
 import java.util.ArrayList;
 import java.util.Date;
+import java.util.Scanner;
 
 public class Menu {
 
@@ -62,6 +63,21 @@ public class Menu {
         if (menuLength < menu.size()) {
             menuUpdated();
         }
+    }
+
+    public void addMenuItemFromUserInput() {
+        Scanner input = new Scanner(System.in);
+        System.out.println("Enter name of item: ");
+        String name = input.nextLine();
+        System.out.println("Enter price: ");
+        double price = input.nextDouble();
+        input.nextLine();
+        System.out.println("Enter description: ");
+        String description = input.nextLine();
+        System.out.println("Enter category: ");
+        String category = input.nextLine();
+        input.close();
+        this.addMenuItem(name, price, description, category);
     }
 
     public void removeMenuItem(MenuItem item) {
