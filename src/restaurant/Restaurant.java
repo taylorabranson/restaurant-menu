@@ -1,5 +1,7 @@
 package restaurant;
 
+import java.util.concurrent.TimeUnit;
+
 public class Restaurant {
 
     public static void main(String[] args) {
@@ -16,11 +18,11 @@ public class Restaurant {
 
         System.out.println("\n PRINT SINGLE MENU ITEM \n");
 
-        dinnerMenu.printMenuItemByIndex(dinnerMenu.findMenuItemIndex("Tomato Bisque", 5.99, "Soup"));
+        dinnerMenu.printMenuItem("Tomato Bisque", "Soup");
 
         System.out.println("\n REMOVE MENU ITEM AND REPRINT MENU \n");
 
-        dinnerMenu.removeMenuItemByIndex(dinnerMenu.findMenuItemIndex("Tomato Bisque", 5.99, "Soup"));
+        dinnerMenu.removeMenuItem("Tomato Bisque", "Soup");
 
         dinnerMenu.printMenu();
     }

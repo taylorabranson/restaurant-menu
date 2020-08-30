@@ -67,7 +67,8 @@ public class Menu {
         this.addMenuItem(name, price, description, category);
     }
 
-    public void removeMenuItemByIndex(int index) {
+    public void removeMenuItem(String name, String category) {
+        int index = findMenuItemIndex(name, category);
         menu.remove(index);
         menuUpdated();
     }
@@ -90,15 +91,16 @@ public class Menu {
         ;
     }
 
-    public void printMenuItemByIndex(int index) {
+    public void printMenuItem(String name, String category) {
+        int index = findMenuItemIndex(name, category);
         menu.get(index).printMenuItem();
     }
 
-    public int findMenuItemIndex(String name, double price, String category) {
+    public int findMenuItemIndex(String name, String category) {
         MenuItem item;
         for (int i = 0; i < menu.size(); i++) {
             item = menu.get(i);
-            if (item.getName() == name && item.getPrice() == price && item.getCategory() == category) {
+            if (item.getName() == name && item.getCategory() == category) {
                 return i;
             }
         }
