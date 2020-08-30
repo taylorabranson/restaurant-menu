@@ -38,6 +38,10 @@ public class Menu {
         this.lastUpdated = aLastUpdated;
     }
 
+    public ArrayList<MenuItem> getMenu() {
+        return menu;
+    }
+
     // other methods
 
     private void menuUpdated() {
@@ -53,6 +57,10 @@ public class Menu {
             System.out.println("\n*******\n");
             item.printMenuItem();
         };
+    }
+
+    public void printMenuItemByIndex(int index) {
+        menu.get(index).printMenuItem();
     }
 
     public int findMenuItemIndex(String name, double price, String category) {
