@@ -46,9 +46,14 @@ public class Menu {
     public void addMenuItem(String name, double price, String description, String category) {
         int menuLength = menu.size();
         MenuItem item = new MenuItem(name, price, description, category);
-        menu.add(item);
-        if (menuLength < menu.size()) {
-            menuUpdated();
+        if (menu.contains(item)) {
+            System.out.println("\nWarning:\nItem already in menu.\nItem " +
+                    "not added.");
+        } else {
+            menu.add(item);
+            if (menuLength < menu.size()) {
+                menuUpdated();
+            }
         }
     }
 
