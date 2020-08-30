@@ -42,42 +42,10 @@ public class Menu {
         return menu;
     }
 
-    // other methods
-
-    private void menuUpdated() {
-        // gets current date from java.util.date
-        Date currentTime = new Date();
-        setLastUpdated(currentTime);
-    }
-
-    public void printMenu() {
-        System.out.println(getMenuName());
-        System.out.println("Menu Last Updated: \n" + getLastUpdated().toString());
-        for (MenuItem item : this.menu) {
-            System.out.println("\n*******\n");
-            item.printMenuItem();
-        };
-    }
-
-    public void printMenuItemByIndex(int index) {
-        menu.get(index).printMenuItem();
-    }
-
-    public int findMenuItemIndex(String name, double price, String category) {
-        MenuItem item;
-        for (int i = 0; i < menu.size(); i++) {
-            item = menu.get(i);
-            if (item.getName() == name && item.getPrice() == price && item.getCategory() == category) {
-                return i;
-            }
-        }
-        return -1;
-    }
-
     // add/remove MenuItem from menu
     public void addMenuItem(String name, double price, String description, String category) {
         int menuLength = menu.size();
-        MenuItem item = new MenuItem(name,price, description, category);
+        MenuItem item = new MenuItem(name, price, description, category);
         menu.add(item);
         if (menuLength < menu.size()) {
             menuUpdated();
@@ -102,5 +70,38 @@ public class Menu {
     public void removeMenuItemByIndex(int index) {
         menu.remove(index);
         menuUpdated();
+    }
+
+    // other methods
+
+    private void menuUpdated() {
+        // gets current date from java.util.date
+        Date currentTime = new Date();
+        setLastUpdated(currentTime);
+    }
+
+    public void printMenu() {
+        System.out.println(getMenuName());
+        System.out.println("Menu Last Updated: \n" + getLastUpdated().toString());
+        for (MenuItem item : this.menu) {
+            System.out.println("\n*******\n");
+            item.printMenuItem();
+        }
+        ;
+    }
+
+    public void printMenuItemByIndex(int index) {
+        menu.get(index).printMenuItem();
+    }
+
+    public int findMenuItemIndex(String name, double price, String category) {
+        MenuItem item;
+        for (int i = 0; i < menu.size(); i++) {
+            item = menu.get(i);
+            if (item.getName() == name && item.getPrice() == price && item.getCategory() == category) {
+                return i;
+            }
+        }
+        return -1;
     }
 }
