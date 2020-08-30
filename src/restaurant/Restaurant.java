@@ -18,7 +18,11 @@ public class Restaurant {
 
         dinnerMenu.printMenuItemByIndex(dinnerMenu.findMenuItemIndex("Tomato Bisque", 5.99, "Soup"));
 
+        System.out.println("\n REMOVE MENU ITEM AND REPRINT MENU \n");
+
         dinnerMenu.removeMenuItemByIndex(dinnerMenu.findMenuItemIndex("Tomato Bisque", 5.99, "Soup"));
+
+        dinnerMenu.printMenu();
     }
 
 }
